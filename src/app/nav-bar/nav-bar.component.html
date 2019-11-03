@@ -1,0 +1,13 @@
+<ng-sidebar [(opened)]="_opened" position="left" mode="hover" animate=true closeOnClickOutside=true style="width: 50vw;">
+
+        <div style="width: 20vw;" class="text-center">
+            <h1>LJKonnect</h1><hr>
+            <a routerLink="/homepage" class="nav-anchor">Events</a><br>
+            <a routerLink="/add-event" class="nav-anchor">Add Events</a><br>
+        </div>
+    
+    </ng-sidebar>
+    <header class="demo-header">
+            <button (click)="_toggleSidebar()" class="demo-header__toggle">Toggle sidebar</button>
+            <span>LJKonnect</span>
+    </header>

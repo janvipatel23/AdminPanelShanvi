@@ -1,0 +1,43 @@
+<div>
+    <header class="bmd-layout-header">
+        <div class="custom-bar">
+            <img src="assets/images/ljkBrand.png" class="brand-img">
+        </div>
+    </header>
+    <main>
+        <div id="app" class="container">
+            <div class="row sign-up-group">
+                <div class="col-md-6 col-sm-12 col-xs-12 title">
+                    <h1 class="form-title">Log<br>In</h1>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+                        <mat-form-field [hideRequiredMarker]="false" [floatLabel]="auto">
+                            <input matInput placeholder="email" name="email" [(ngModel)]="email" required>
+                            <mat-hint align="start">e.g:- abc@xyz.com</mat-hint>
+                            <mat-error>Field empty or invalid value
+                                entered.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                               name="password" [(ngModel)]="password" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-hint align="start">Your Password is safe with us.</mat-hint>
+                            <mat-error>Field empty or invalid value
+                                entered.</mat-error>
+                        </mat-form-field>
+                        <button type="submit" class="btn form-label sign-up-btn" [disabled]="!formData.valid">Log In</button>
+                    </form>
+
+                    <div *ngIf="show" class="loading-spinner">
+                        <mat-spinner [diameter]="30"></mat-spinner>
+                    </div>
+                    <!-- <br><a class="login-link">Forgot Password</a> -->
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
